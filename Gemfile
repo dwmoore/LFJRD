@@ -17,6 +17,13 @@ gem 'devise'
 gem 'figaro', '>= 1.0.0.rc1'
 gem 'pg'
 gem 'simple_form'
+gem 'font-awesome-rails', '~> 4.3.0.0'
+gem 'carrierwave', '~> 0.10.0'
+gem 'gibbon', '~> 1.1.5'
+gem 'aws-sdk', '~> 2.0.31'
+gem 'newrelic_rpm', '~> 3.11.0.283'
+gem 'keen', '~> 0.8.9'
+gem 'ionicons-rails', '~> 2.0.0'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
