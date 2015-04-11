@@ -36,14 +36,55 @@
         </div>
       </div>
       <div class="header-wrapper">
+        <!-- ********** HEADER SECTION ********** -->
+        <div id="h">
+          <div class="container">
+            <div class="row centered">
+              <h3 class="logo aligncenter">LFJRD</h3>
+              <h1>Pairing Exceptional Junior Devs<br/>With Outstanding Organizations</h1>
+            </div><!--/row -->
+            <div class="row">
+              <div class="continue">
+                <i class="ion-chevron-down"></i>
+              </div>
+            </div><!--/row -->
+          </div><!--/container -->
+        </div><!--/header -->
       </div>
     </header>
+    <!-- ********** CALL TO ACTION SECTION ********** -->
+    <div id="cta">
+      <div class="container">
+        <div class="row">
+          <h2>Featured Developers for <%= Date.today.strftime("%B") %></h2>
+        </div><!--/row -->
+      </div><!--/container -->
+    </div><!--/CTA -->
 
-    <main role="main">
-      <%= render 'layouts/messages' %>
-      <%= yield %>
-    </main>
+    <%= render 'layouts/messages' %>
+    <%= yield %>
 
+    <!-- ********** REGISTER SECTION ********** -->
+    <div id="g">
+      <div class="container">
+        <div class="row mt">
+          <div class="col-md-6 col-md-offset-3 centered">
+            <h2>Stay Up To Date On The Top Resources<br />For New Developers</h2>
+            <hr class="aligncenter">
+            <h4>Get The Junior Dev Newsletter</h4>
+          </div><!-- /col-md-6-->
+        </div><!--/row -->
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 mt centered">
+            <form role="form" action="register.php" method="post" enctype="plain">
+              <input type="email" name="email" class="subscribe-input" placeholder="Enter your e-mail address..." required>
+              <button class='btn btn-lg btn-green subscribe-submit' type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div><!--/row -->
+      </div><!--/container -->
+    </div><!--/g -->
     <!-- ********** END SECTION ********** -->
     <div class="footer">
       <div class="container">
@@ -60,5 +101,6 @@
         </div><!--/row -->
       </div><!--/container -->
     </div><!--/.footer -->
-  </body>
+
+    </body>
 </html>

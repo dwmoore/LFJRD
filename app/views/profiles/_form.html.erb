@@ -1,0 +1,36 @@
+<%= form_for @profile do |f| %>
+  <div class="form-group">
+    <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :website, placeholder: "Website Link", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :twitter, placeholder: "Twitter Link", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :git_app, placeholder: "Github or BitBucket Link", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :crud_project, placeholder: "Crud Repo Link", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :api_project, placeholder: "API Repo Link", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :tested_project, placeholder: "Tested Repo Link", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :why, placeholder: "What interests you about code?", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :goals, placeholder: "What are your coding goals for the next three months?", class: "form-control" %>
+  </div>
+  <div class="btn-group" role="group">
+    <%= f.submit "Update Profile", class: "btn btn-med" %>
+  </div>
+
+<% end %>

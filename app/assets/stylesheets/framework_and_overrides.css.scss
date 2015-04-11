@@ -35,11 +35,11 @@ img {
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
-  @extend .container;
+//  @extend .container;
   background-color: #eee;
-  padding-bottom: 80px;
+//  padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px; // accommodate the navbar
+//  margin-top: 51px; // accommodate the navbar
   }
 section {
   @extend .row;
@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   padding: 0;
-  margin-bottom: 112px;
+  margin-bottom: 12px;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -396,6 +396,11 @@ input {
 	width: 100%;
 	height: auto;
 }
+.w .avi {
+  @extend .img-circle;
+  width: 100px;
+  height: auto;
+}
 
 .w .date {
 	float: left;
@@ -426,6 +431,10 @@ input {
 	color: #aeaeae;
 }
 
+.w .icons {
+  margin: 0 5px;
+}
+
 /* service panels*/
 .ser {
 	border: 2px solid #2f2f2f;
@@ -436,4 +445,59 @@ input {
 }
 .ser p {
 	margin: 5px;
+}
+.navbar.navbar-transparent {
+  background: transparent;
+  border: none;
+  transition: all 0.25s ease;
+}
+.navbar-login {
+  margin-right: 50px;
+}
+.navbar-login li {
+  color: #2f2f2f;
+  font-weight: 300;
+  padding: 30px 20px;
+}
+.navbar.past-main {
+  background: #f7f8fa;
+  border-bottom: #333333;
+  color: #2f2f2f;
+}
+.navbar.past-main .navbar-brand {
+  color: #2f2f2f;
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-align: center;
+  border: 2px solid #2f2f2f;
+  padding: 10px 6px 0px 6px;
+  margin: 16px 20px;
+  height: 100%;
+}
+
+/* CALL TO ACTION */
+.footer {
+  background: #2f2f2f;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* Profile Header */
+.show-header {
+  background: #2f2f2f;
+  color: white;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.show-header .avi {
+  @extend .img-circle;
+  width: 150px;
+  height: auto;
+}
+
+.show-body {
+ padding: 30px 0px;
 }

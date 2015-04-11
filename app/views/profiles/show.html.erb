@@ -1,0 +1,47 @@
+<!-- ********** PAGE HEADER SECTION ********** -->
+<div class="show-header">
+  <div class="container">
+    <div class="row">
+      <%= image_tag gravatar_url(@profile.get_email, 150), alt: "", class: "avi" %>
+      <h1><%= "#{@profile.first_name} #{@profile.last_name}" %></h1>
+    </div><!--/row -->
+  </div><!--/container -->
+</div><!--/CTA -->
+
+<!-- ********** PAGE MAIN BODY ********** -->
+<div class="show-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="ser w">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <%= @profile.last_name %>
+  <%= @profile.website %>
+  <%= link_to @profile.twitter do %>
+    <i class="fa-twitter"></i>
+  <% end %>
+  <%= link_to @profile.git_app do %>
+    <i class="fa-github"></i>
+  <% end %>
+  <%= link_to @profile.crud_project do %>
+    <i class="fa-bitbucket"></i>
+  <% end %>
+  <%= link_to @profile.api_project do %>
+    <i class="fa-bitbucket"></i>
+  <% end %>
+  <%= link_to @profile.tested_project do %>
+    <i class="fa-bitbucket"></i>
+  <% end %>
+  <p>
+    <%= @profile.why %>
+  </p>
+  <p>
+    <%= @profile.goals %>
+  </p>
