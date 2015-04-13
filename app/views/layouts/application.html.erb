@@ -1,64 +1,50 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Lfjrd" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Lfjrd" %>">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <header>
-      <div class="navbar navbar-default navbar-fixed-top navbar-transparent">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="" href="#">
-              <div class="navbar-brand">LFJRD</div>
-            </a>
-          </div>
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right navbar-login">
-              <li>
-              Create Your Profile
-              </li>
-              <li>
-              Sign In
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="header-wrapper">
-      </div>
-    </header>
+<html lang="en">
 
-    <main role="main">
-      <%= render 'layouts/messages' %>
-      <%= yield %>
-    </main>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <meta name="description" content="Bootstrap Admin App + Ruby on Rails">
+   <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+   <title>Angle - Bootstrap Admin Template</title>
+   <!-- =============== VENDOR STYLES ===============-->
+   <%= stylesheet_link_tag 'base' %>
+   <!-- =============== VIEW VENDOR STYLES ===============-->
+   <%= stylesheet_link_tag params[:controller] %>
+   <!-- =============== APP STYLES ===============-->
+   <%= stylesheet_link_tag 'application', media: 'all', id: "maincss" %>
+   <%= csrf_meta_tags %>
+</head>
 
-    <!-- ********** END SECTION ********** -->
-    <div class="footer">
-      <div class="container">
-        <div class="row mtb">
-          <div class="col-md-6 col-md-offset-3 centered">
-            <p class="text28">
-            <a href="#"><i class="ion-social-twitter"></i></a>
-            <a href="#"><i class="ion-social-instagram"></i></a>
-            <a href="#"><i class="ion-social-facebook"></i></a>
-            </p>
-            <hr class="aligncenter">
-            <p>LFJRD.com | Copyright 2015</p>
-          </div>
-        </div><!--/row -->
-      </div><!--/container -->
-    </div><!--/.footer -->
-  </body>
+<!-- layout-h will adapt the layout position -->
+<body class="layout-h">
+   <div class="wrapper">
+      <!-- top navbar-->
+      <header class="topnavbar-wrapper">
+         <%= render partial: "layouts/partials/topnavbar_h" %>
+      </header>
+      <!-- offsidebar-->
+      <aside class="offsidebar">
+         <%= render partial: "layouts/partials/offsidebar" %>
+      </aside>
+      <!-- Main section-->
+      <section>
+         <!-- Page content-->
+         <div class="content-wrapper">
+            <%= yield %>
+         </div>
+      </section>
+      <!-- Page footer-->
+      <footer>
+         <%= render partial: "layouts/partials/footer" %>
+      </footer>
+   </div>
+   <!-- =============== VENDOR SCRIPTS ===============-->
+   <%= javascript_include_tag 'base' %>
+   <!-- =============== VIEW VENDOR SCRIPTS ===============-->
+   <%= javascript_include_tag params[:controller] %>
+   <!-- =============== APP SCRIPTS ===============-->
+   <%= javascript_include_tag 'application' %>
+</body>
+
 </html>
