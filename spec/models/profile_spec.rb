@@ -8,10 +8,18 @@ RSpec.describe Profile, type: :model do
 
 
   describe "#get_email" do
-    it "returns the profile's user email" do
+    it "returns the profile's  ser email" do
       profile = create(:profile)
 
-      expect(profile.user.email).to eq "test@example.com"
+      expect(profile.get_email).to eq "test@example.com"
+    end
+  end
+
+  describe "#full_name" do
+    it "returns the profile's full name" do
+      profile = create(:profile)
+
+      expect(profile.full_name).to eq "MyString MyString"
     end
   end
 end
