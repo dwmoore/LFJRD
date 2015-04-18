@@ -1,36 +1,83 @@
-<%= form_for @profile do |f| %>
+<%= form_for(@profile, :html => { :class => 'form-horizontal'}) do |f| %>
   <div class="form-group">
-    <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.text_field :website, placeholder: "Website Link", class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.text_field :twitter, placeholder: "Twitter Link", class: "form-control" %>
+    <% if @profile.errors.any? %>
+      <div class="col-lg-offset-3 col-lg-9">
+        <p class="contol-label"><%= pluralize(@profile.errors.count, "Error") %> Detected:</p>
+        <% @profile.errors.full_messages.each do |message| %>
+          <p class="text-danger"><%= message %></p>
+        <% end %>
+      </div>
+    <% end %>
   </div>
   <div class="form-group">
-    <%= f.text_field :git_app, placeholder: "Github or BitBucket Link", class: "form-control" %>
+    <%= f.label :first_name, class: "col-lg-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+    </div>
   </div>
   <div class="form-group">
-    <%= f.text_field :crud_project, placeholder: "Crud Repo Link", class: "form-control" %>
+    <%= f.label :last_name, class: "col-lg-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+    </div>
   </div>
   <div class="form-group">
-    <%= f.text_field :api_project, placeholder: "API Repo Link", class: "form-control" %>
+    <%= f.label :website, class: "col-lg-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_field :website, placeholder: "http://your_site.com", class: "form-control" %>
+    </div>
   </div>
   <div class="form-group">
-    <%= f.text_field :tested_project, placeholder: "Tested Repo Link", class: "form-control" %>
+    <%= f.label :twiter, "Twitter Profile", class: "col-lg-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_field :twitter, placeholder: "https://twitter.com/your_profile", class: "form-control" %>
+    </div>
   </div>
   <div class="form-group">
-    <%= f.text_area :why, placeholder: "What interests you about code?", class: "form-control" %>
+    <%= f.label :git_app, "Repo Profile", class: "col-lg-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_field :git_app, placeholder: "https://github.com/your_profile", class: "form-control" %>
+      <p>Github or Bitbucket</p>
+    </div>
   </div>
   <div class="form-group">
-    <%= f.text_area :goals, placeholder: "What are your coding goals for the next three months?", class: "form-control" %>
+    <%= f.label :crud_project, "CRUD Project", class: "col-lg-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_field :crud_project, placeholder: "https://bitbucket.com/your_profile/your_repo", class: "form-control" %>
+      <p>Repo or commit showing CRUD functionality (Github or Bitbucket)</p>
+    </div>
   </div>
-  <div class="btn-group" role="group">
-    <%= f.submit "Update Profile", class: "btn btn-med" %>
+  <div class="form-group">
+    <%= f.label :api_project, "API Project", class: "col-lg-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_field :api_project, placeholder: "https://github.com/your_profile/your_repo/commit/#...", class: "form-control" %>
+      <p>Repo or commit showing API integration (Github or Bitbucket)</p>
+    </div>
   </div>
-
+  <div class="form-group">
+    <%= f.label :tested_project, "Tested Project", class: "col-lg-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_field :tested_project, placeholder: "https://bitbucket.com/your_profile/your_repo", class: "form-control" %>
+      <p>Repo or commit showing testing practices (Github or Bitbucket)</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :why, "Motivation", class: "col-lg-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_area :why, placeholder: "What interests you about code?", class: "form-control" %>
+      <p>250 characters max</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :goals, "Goals", class: "col-lg-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_area :goals, placeholder: "What are your coding goals for the next three months?", class: "form-control" %>
+      <p>250 characters max</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-3 col-lg-9">
+      <%= f.submit 'Save Changes', :class => 'btn btn-lg btn-primary btn-block' %>
+    </div>
+  </div>
 <% end %>
