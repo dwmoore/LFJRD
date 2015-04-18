@@ -1,0 +1,115 @@
+@import url(http://fonts.googleapis.com/css?family=Satisfy|Dancing+Script|Pacifico);
+
+.satisfy {
+  font-family: 'Satisfy', cursive;
+}
+.dancing-script {
+  font-family: 'Dancing Script', cursive;
+}
+.pacifico {
+  font-family: 'Dancing Script', cursive;
+}
+.white {
+  color: #fff;
+}
+
+.alignleft { float: left; }
+.alignright { float: right; }
+.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  clear: both;
+}
+.centered {text-align: center}
+
+#h {
+  background: image-url("header.jpg") no-repeat center top;
+  padding-top: 60px;
+  text-align: center;
+  background-attachment: relative;
+  background-position: center center;
+  min-height: 660px;
+  width: 100%;
+
+  -webkit-background-size: 100%;
+  -moz-box-sizingz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#h h3.logo {
+  font-weight: 900;
+  font-size: 56px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: white;
+  margin-bottom: 120px;
+  border: 3px solid white;
+  width: 200px;
+  padding: 12px;
+  margin: 80px auto 0 auto;
+}
+#h h3.logo2 {
+  @extend .white;
+  @extend .satisfy;
+  font-size: 48px;
+}
+
+.h-title {
+  color: white;
+  font-size: 100px;
+  padding-top: 10%;
+}
+
+.h-title-2 {
+  color: white;
+  font-size: 60px;
+  padding-top: 30px;
+}
+
+#h .continue {
+  font-size: 30px;
+  color: #1abc9c;
+  margin-top: 80px;
+}
+.brand-link {
+  margin: 0;
+  padding: 0;
+}
+.brand-link:hover {
+  color: #fff;
+}
+.navbar-brand {
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+
+.b {
+  background-color: #fff;
+}
+.cta {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  text-align: center;
+  width: 100%;
+}
+.cta-buttons {
+  color: #3a3f51;
+}
+.padding-top {
+  padding-top: 75px;
+}
+.profile-link {
+}
+.profile-link:hover {
+  color: #51c6ea;
+  text-decoration: none;
+}

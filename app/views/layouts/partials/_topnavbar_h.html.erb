@@ -32,38 +32,9 @@
         <li><%= link_to 'Edit account', edit_user_registration_path %></li>
         <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
       <% else %>
+        <li><%= link_to 'Sign up to create your profile!', new_user_registration_path %></li>
         <li><%= link_to 'Sign in', new_user_session_path %></li>
-        <li><%= link_to 'Sign up', new_user_registration_path %></li>
       <% end %>
-      <!-- END Log In -->
-      <!-- START lock screen-->
-      <!-- <li>
-            <a href="/pages/lock" title="Lock screen">
-               <em class="icon-lock"></em>
-            </a>
-         </li> -->
-      <!-- END lock screen-->
-      <!-- Search icon-->
-      <!-- <li>
-      <a href="#" data-search-open="">
-        <em class="icon-magnifier"></em>
-      </a>
-      </li> -->
-      <!-- Fullscreen (only desktops)-->
-      <!-- <li class="visible-lg">
-            <a href="#" data-toggle-fullscreen="">
-               <em class="fa fa-expand"></em>
-            </a>
-         </li> -->
-      <!-- START Alert menu-->
-      <!-- END Alert menu-->
-      <!-- START Contacts button-->
-        <li>
-          <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
-            <em class="icon-notebook"></em>
-          </a>
-        </li>
-      <!-- END Contacts menu-->
     </ul>
     <!-- END Right Navbar-->
   </div>
