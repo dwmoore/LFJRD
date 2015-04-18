@@ -1,60 +1,72 @@
-<!-- ********** CALL TO ACTION SECTION ********** -->
-<div id="cta">
-  <div class="container">
-    <div class="row">
-      <h2>Developers</h2>
-    </div><!--/row -->
-  </div><!--/container -->
-</div><!--/CTA -->
-
-<div class="container">
-  <div class="row mtb centered">
-    <% @profiles.each do |profile| %>
-      <div class="col-md-3">
-        <div class="ser w">
-          <%= image_tag gravatar_url(profile.get_email, 100), alt: "", class: "avi" %>
-          <h5>
-            <%= profile.first_name %>
-            <%= profile.last_name %>
-          </h5>
-          <hr class="aligncenter">
-          <% if profile.website? %>
-            <%= link_to profile.website do %>
-              <i class="fa fa-home fa-3x icons"></i>
-            <% end %>
-          <% end %>
-          <% if profile.twitter? %>
-            <%= link_to profile.twitter do %>
-              <i class="fa fa-twitter fa-3x icons"></i>
-            <% end %>
-          <% end %>
-          <% if profile.git_app.include?("github") %>
-            <%= link_to profile.git_app do %>
-              <i class="fa fa-github fa-3x icons"></i>
-            <% end %>
-          <% elsif profile.git_app.include?("bitbucket") %>
-            <%= link_to profile.git_app do %>
-              <i class="fa fa-bitbucket fa-3x icons"></i>
-            <% end %>
-          <% end %>
-          <br />
-          <br />
-          Work Includes:
-          <% if profile.crud_project? %>
-            <h4>CRUD Operations</h4>
-          <% end %>
-          <% if profile.api_project? %>
-            <h4>API Integrations</h4>
-          <% end %>
-          <% if profile.tested_project? %>
-            <h4>Testing Practices</h4>
-          <% end %>
-          <br />
-          <p>
-            <%= link_to "View Full Profile", profile %>
-          </p>
-        </div>
-      </div>
-    <% end %>
+<!-- START row-->
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <h2>Browsing All Developers</h2>
+    <br />
   </div>
 </div>
+<!-- START row-->
+<div class="row">
+  <% @profiles.each do |profile| %>
+    <div class="col-md-4">
+      <!-- START widget-->
+        <div class="panel widget">
+          <%= link_to profile_path(profile) do %>
+            <div class="half-float">
+              <img src=<%= image_path("angle/bg3.jpg") %> alt="" class="img-responsive" />
+              <div class="half-float-bottom">
+                <%= image_tag gravatar_url(profile.get_email, 128), alt: "Profile Image", class: "img-thumbnail img-circle thumb128" %>
+              </div>
+            </div>
+          <% end %>
+          <div class="panel-body text-center">
+            <h3 class="m0"><%= profile.full_name %></h3>
+            <p class="text-muted">Code Examples Include:</p>
+            <div class="row row-table">
+              <div class="col-xs-4 br">
+                <p class="<%= profile.tested_project ? "text-success" : "text-muted" %>">
+                CRUD
+                </p>
+              </div>
+              <div class="col-xs-4 br">
+                <p class="<%= profile.tested_project ? "text-success" : "text-muted" %>">
+                API
+                </p>
+              </div>
+              <div class="col-xs-4">
+                <p class="<%= profile.tested_project ? "text-success" : "text-muted" %>">
+                TDD
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="panel-body text-center bg-gray-dark">
+            <div class="row row-table">
+              <div class="col-xs-4 br">
+                <%= link_to profile.twitter, class: "text-white profile-link"  do %>
+                  <h3 class="m0"><em class="fa fa-twitter fa-fw fa-2x"></em></h3>
+                  <p class="m0">Twitter</p>
+                <% end %>
+              </div>
+              <div class="col-xs-4 br">
+                <%= link_to profile.website, class: "text-white profile-link" do %>
+                  <h3 class="m0"><em class="fa fa-home fa-fw fa-2x"></em></h3>
+                  <p class="m0">Webpage</p>
+                <% end %>
+              </div>
+              <div class="col-xs-4">
+                <%= link_to profile.git_app, class: "text-white profile-link" do %>
+                  <h3 class="m0"><em class="fa fa-<%= profile.repo_service %> fa-fw fa-2x"></em></h3>
+                  <p class="m0"><%= profile.repo_service.titleize %></p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- END widget-->
+    </div>
+  <% end %>
+</div>
+
+
+

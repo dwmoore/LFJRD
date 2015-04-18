@@ -56,8 +56,8 @@
               </div>
               <div class="col-xs-4">
                 <%= link_to profile.git_app, class: "text-white profile-link" do %>
-                  <h3 class="m0"><em class="fa fa-github fa-fw fa-2x"></em></h3>
-                  <p class="m0">Github</p>
+                  <h3 class="m0"><em class="fa fa-<%= profile.repo_service %> fa-fw fa-2x"></em></h3>
+                  <p class="m0"><%= profile.repo_service.titleize %></p>
                 <% end %>
               </div>
             </div>

@@ -1,47 +1,370 @@
-<!-- ********** PAGE HEADER SECTION ********** -->
-<div class="show-header">
-  <div class="container">
+<div class="unwrap">
+  <div style="background-image: url(<%= asset_path 'angle/profile-bg.jpg' %>)" class="bg-cover">
+    <div class="p-xl text-center text-white">
+      <%= image_tag gravatar_url(@profile.get_email, 128), alt: "Profile Image", class: "img-thumbnail img-circle thumb128" %>
+      <h1 class="m0"><%= @profile.full_name %></h1>
+    </div>
+  </div>
+  <div class="text-center bg-gray-dark p-lg mb-xl">
+    <div class="row row-table">
+      <div class="col-xs-4 br">
+        <%= link_to @profile.twitter, class: "text-white profile-link"  do %>
+          <h3 class="m0"><em class="fa fa-twitter fa-fw fa-2x"></em></h3>
+          <p class="m0">Twitter</p>
+        <% end %>
+      </div>
+      <div class="col-xs-4 br">
+        <%= link_to @profile.website, class: "text-white profile-link"  do %>
+          <h3 class="m0"><em class="fa fa-home fa-fw fa-2x"></em></h3>
+          <p class="m0">Webpage</p>
+        <% end %>
+      </div>
+      <div class="col-xs-4">
+        <%= link_to @profile.git_app, class: "text-white profile-link"  do %>
+          <h3 class="m0"><em class="fa fa-<%= @profile.repo_service %> fa-fw fa-2x"></em></h3>
+          <p class="m0"><%= @profile.repo_service.titleize %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="p-lg">
     <div class="row">
-      <%= image_tag gravatar_url(@profile.get_email, 150), alt: "", class: "avi" %>
-      <h1><%= "#{@profile.first_name} #{@profile.last_name}" %></h1>
-    </div><!--/row -->
-  </div><!--/container -->
-</div><!--/CTA -->
 
-<!-- ********** PAGE MAIN BODY ********** -->
-<div class="show-body">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="ser w">
+
+
+      <div class="col-lg-3">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="text-center">
+              <h3 class="mt0">Why Code?</h3>
+            </div>
+            <hr/>
+            <p><em>"<%= @profile.why %>"</em></p>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="text-center">
+              <h3 class="mt0">Code Examples</h3>
+            </div>
+            <hr/>
+          </div>
+          <div class="list-group">
+            <%= link_to "#{@profile.crud_project}", class: "list-group-item" do %>
+              <em class="pull-right fa fa-code fa-lg fa-fw text-muted mt"></em>
+              <h4 class="list-group-item-heading">CRUD</h4>
+              <p class="list-group-item-text">Example</p>
+            <% end %>
+            <%= link_to "#{@profile.api_project}", class: "list-group-item" do %>
+              <em class="pull-right fa fa-code fa-lg fa-fw text-muted mt"></em>
+              <h4 class="list-group-item-heading">API</h4>
+              <p class="list-group-item-text">Example</p>
+            <% end %>
+            <%= link_to "#{@profile.tested_project}", class: "list-group-item" do %>
+              <em class="pull-right fa fa-code fa-lg fa-fw text-muted mt"></em>
+              <h4 class="list-group-item-heading">Testing</h4>
+              <p class="list-group-item-text">Example</p>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="text-center">
+              <h3 class="mt0">Three Month Goals</h3>
+            </div>
+            <hr/>
+            <p><em>"<%= @profile.goals %>"</em></p>
+          </div>
         </div>
       </div>
+
+      <!-- START Right Column -->
+      <div class="col-lg-9">
+        <!-- START timeline-->
+        <ul class="timeline">
+          <li data-datetime="Today" class="timeline-separator"></li>
+          <!-- START timeline item-->
+          <li>
+          <div class="timeline-badge primary">
+            <em class="fa fa-comment"></em>
+          </div>
+          <div class="timeline-panel">
+            <div class="popover left">
+              <div class="arrow"></div>
+              <div class="popover-content">
+                <div class="table-grid table-grid-align-middle mb">
+                  <div class="col col-xs">
+                    <img src="<%= image_path('angle/user/05.jpg') %>" alt="Image" class="media-object img-circle thumb48" />
+                  </div>
+                  <div class="col">
+                    <p class="m0">
+                    <a href="#" class="text-muted">
+                      <strong>Aiden Curtis</strong>
+                    </a>posted a comment</p>
+                  </div>
+                </div>
+                <p>
+                <em>"Fusce pellentesque congue justo in rutrum. Praesent non nulla et ligula luctus mattis eget at lacus."</em>
+                </p>
+              </div>
+            </div>
+          </div>
+          </li>
+          <!-- END timeline item-->
+          <!-- START timeline item-->
+          <li class="timeline-inverted">
+          <div class="timeline-badge green">
+            <em class="fa fa-picture-o"></em>
+          </div>
+          <div class="timeline-panel">
+            <div class="popover right">
+              <div class="arrow"></div>
+              <div class="popover-content">
+                <div class="table-grid table-grid-align-middle mb">
+                  <div class="col col-xs">
+                    <img src="<%= image_path('angle/user/04.jpg') %>" alt="Image" class="media-object img-circle thumb48" />
+                  </div>
+                  <div class="col">
+                    <p class="m0">
+                    <a href="#" class="text-muted">
+                      <strong>James Payne</strong>
+                    </a>shared a new idea</p>
+                  </div>
+                </div>
+                <a href="#">
+                  <img src="<%= image_path('angle/mockup.png') %>" alt="Img" class="img-responsive" />
+                </a>
+                <p class="text-muted mv">3 Comments</p>
+                <div class="media bb p">
+                  <small class="pull-right text-muted">12m ago</small>
+                  <div class="pull-left">
+                    <img src="<%= image_path('angle/user/05.jpg') %>" alt="Image" class="media-object img-circle thumb32" />
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">
+                      <p class="m0">
+                      <a href="#">
+                        <strong>Aiden Curtis</strong>
+                      </a>
+                      </p>
+                      <p class="m0 text-muted">Hey looks great!</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="media bb p">
+                  <small class="pull-right text-muted">30m ago</small>
+                  <div class="pull-left">
+                    <img src="<%= image_path('angle/user/08.jpg') %>" alt="Image" class="media-object img-circle thumb32" />
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">
+                      <p class="m0">
+                      <a href="#">
+                        <strong>Samantha Murphy</strong>
+                      </a>
+                      </p>
+                      <p class="m0 text-muted">Excellento job!</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="media bb p">
+                  <small class="pull-right text-muted">30m ago</small>
+                  <div class="pull-left">
+                    <img src="<%= image_path('angle/user/04.jpg') %>" alt="Image" class="media-object img-circle thumb32" />
+                  </div>
+                  <div class="media-body">
+                    <div class="media-heading">
+                      <p class="m0">
+                      <a href="#">
+                        <strong>James Payne</strong>
+                      </a>
+                      </p>
+                      <p class="m0 text-muted">WIP guys :)</p>
+                    </div>
+                  </div>
+                </div>
+                <form method="post" action="#" class="mt">
+                  <textarea placeholder="Comment..." rows="1" class="form-control no-resize"></textarea>
+                </form>
+              </div>
+            </div>
+          </div>
+          </li>
+          <!-- START timeline item-->
+          <li>
+          <div class="timeline-badge info">
+            <em class="fa fa-file-o"></em>
+          </div>
+          <div class="timeline-panel">
+            <div class="popover left">
+              <div class="arrow"></div>
+              <div class="popover-content">
+                <div class="table-grid table-grid-align-middle mb">
+                  <div class="col col-xs">
+                    <img src="<%= image_path('angle/user/08.jpg') %>" alt="Image" class="media-object img-circle thumb48" />
+                  </div>
+                  <div class="col">
+                    <p class="m0">
+                    <a href="#" class="text-muted">
+                      <strong>Samantha Murphy</strong>
+                    </a>shared new files</p>
+                  </div>
+                </div>
+                <ul class="list-unstyled">
+                  <li class="pb">
+                  <em class="fa fa-file-o fa-fw mr"></em><a href="#" class="text-info">framework-docs-part1.pdf<em class="pull-right fa fa-download fa-fw"></em></a>
+                  </li>
+                  <li class="pb">
+                  <em class="fa fa-file-o fa-fw mr"></em><a href="#" class="text-info">framework-docs-part2.pdf<em class="pull-right fa fa-download fa-fw"></em></a>
+                  </li>
+                  <li class="pb">
+                  <em class="fa fa-file-o fa-fw mr"></em><a href="#" class="text-info">framework-docs-part3.pdf<em class="pull-right fa fa-download fa-fw"></em></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          </li>
+          <!-- END timeline item-->
+          <!-- START timeline item-->
+          <li>
+          <div class="timeline-badge purple">
+            <em class="fa fa-map-marker"></em>
+          </div>
+          <div class="timeline-panel">
+            <div class="popover left">
+              <div class="arrow"></div>
+              <div class="popover-content">
+                <div class="table-grid table-grid-align-middle mb">
+                  <div class="col col-xs">
+                    <img src="<%= image_path('angle/user/08.jpg') %>" alt="Image" class="media-object img-circle thumb48" />
+                  </div>
+                  <div class="col">
+                    <p class="m0">
+                    <a href="#" class="text-muted">
+                      <strong>Samantha Murphy</strong>
+                    </a>shared new location</p>
+                  </div>
+                </div>
+                <p>
+                <em>"Hey guys! Please check the new location for tomorrows's meeting."</em>
+                </p>
+                <div data-gmap="" data-address="276 N TUSTIN ST, ORANGE, CA 92867" data-styled="data-styled" class="gmap"></div>
+              </div>
+            </div>
+          </div>
+          </li>
+          <!-- END timeline item-->
+          <!-- START timeline separator-->
+          <li data-datetime="Yesterday" class="timeline-separator"></li>
+          <!-- END timeline separator-->
+          <!-- START timeline item-->
+          <li>
+          <div class="timeline-badge success">
+            <em class="fa fa-ticket"></em>
+          </div>
+          <div class="timeline-panel">
+            <div class="popover left">
+              <div class="arrow"></div>
+              <div class="popover-content">
+                <div class="table-grid table-grid-align-middle mb">
+                  <div class="col col-xs">
+                    <img src="<%= image_path('angle/user/12.jpg') %>" alt="Image" class="media-object img-circle thumb48" />
+                  </div>
+                  <div class="col">
+                    <p class="m0">
+                    <a href="#" class="text-muted">
+                      <strong>Dennis Green</strong>
+                    </a>closed issue <a href="#">#548795</a>
+                    </p>
+                    <p class="m0">
+                    <em>&mdash; bootstrap.js needs update</em>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </li>
+          <!-- END timeline item-->
+          <li class="timeline-inverted">
+          <div class="timeline-badge warning">
+            <em class="fa fa-ticket"></em>
+          </div>
+          <div class="timeline-panel">
+            <div class="popover right">
+              <div class="arrow"></div>
+              <div class="popover-content">
+                <div class="table-grid table-grid-align-middle mb">
+                  <div class="col col-xs">
+                    <img src="<%= image_path('angle/user/09.jpg') %>" alt="Image" class="media-object img-circle thumb48" />
+                  </div>
+                  <div class="col">
+                    <p class="m0">
+                    <a href="#" class="text-muted">
+                      <strong>Ted Berry</strong>
+                    </a>assigned
+                    <a href="#" class="text-muted">
+                      <strong>Dennis Green</strong>
+                    </a>to issue <a href="#">#548795</a>
+                    </p>
+                    <p class="m0">
+                    <em>&mdash; bootstrap.js needs update</em>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </li>
+          <!-- END timeline item-->
+          <!-- START timeline item-->
+          <li>
+          <div class="timeline-badge danger">
+            <em class="fa fa-ticket"></em>
+          </div>
+          <div class="timeline-panel">
+            <div class="popover left">
+              <div class="arrow"></div>
+              <div class="popover-content">
+                <div class="table-grid table-grid-align-middle mb">
+                  <div class="col col-xs">
+                    <img src="<%= image_path('angle/user/10.jpg') %>" alt="Image" class="media-object img-circle thumb48" />
+                  </div>
+                  <div class="col">
+                    <p class="m0">
+                    <a href="#" class="text-muted">
+                      <strong>Jon Perry</strong>
+                    </a>opened issue <a href="#">#548795</a>
+                    </p>
+                    <p class="m0">
+                    <em>&mdash; bootstrap.js needs update</em>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </li>
+          <!-- END timeline item-->
+          <!-- START timeline item-->
+          <li class="timeline-end">
+          <a href="#" class="timeline-badge">
+            <em class="fa fa-plus"></em>
+          </a>
+          </li>
+          <!-- END timeline item-->
+        </ul>
+        <!-- END timeline-->
+      </div>
+
     </div>
   </div>
 </div>
 
+<!-- GOOGLE MAPS-->
+<%= javascript_include_tag "//maps.google.com/maps/api/js?sensor=false" %>
 
 
-  <%= @profile.last_name %>
-  <%= @profile.website %>
-  <%= link_to @profile.twitter do %>
-    <i class="fa-twitter"></i>
-  <% end %>
-  <%= link_to @profile.git_app do %>
-    <i class="fa-github"></i>
-  <% end %>
-  <%= link_to @profile.crud_project do %>
-    <i class="fa-bitbucket"></i>
-  <% end %>
-  <%= link_to @profile.api_project do %>
-    <i class="fa-bitbucket"></i>
-  <% end %>
-  <%= link_to @profile.tested_project do %>
-    <i class="fa-bitbucket"></i>
-  <% end %>
-  <p>
-    <%= @profile.why %>
-  </p>
-  <p>
-    <%= @profile.goals %>
-  </p>
