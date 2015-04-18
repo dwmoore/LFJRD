@@ -52,8 +52,8 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :website, :twitter, :github,
-                                    :bitbucket, :crud_project, :api_project, :tested_project,
+    params.require(:profile).permit(:first_name, :last_name, :website, :twitter, :git_app,
+                                    :crud_project, :api_project, :tested_project,
                                     :why, :goals)
   end
 

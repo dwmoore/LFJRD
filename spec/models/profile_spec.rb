@@ -19,7 +19,24 @@ RSpec.describe Profile, type: :model do
     it "returns the profile's full name" do
       profile = create(:profile)
 
-      expect(profile.full_name).to eq "MyString MyString"
+      expect(profile.full_name).to eq "Mike Mulligan"
     end
   end
+   describe "#repo_service" do
+     it "returns Github when a github repo" do
+       profile = build_stubbed(:profile, git_app: "http://github.com/some_porfile")
+
+       repo = profile.repo_service
+
+       expect(repo).to eq "github"
+     end
+
+     it "returns Bitbucket when a bitbucket repo" do
+       profile = build_stubbed(:profile, git_app: "http://bitbucket.com/some_porfile")
+
+       repo = profile.repo_service
+
+       expect(repo).to eq "bitbucket"
+     end
+   end
 end
