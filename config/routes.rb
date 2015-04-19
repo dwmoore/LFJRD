@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :profiles
+  resources :updates, only: [:new, :create, :destroy]
 
   # defaults to dashboard
   #root :to => redirect('/singleview')

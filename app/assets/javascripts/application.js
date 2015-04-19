@@ -4,6 +4,8 @@
 //--- jQuery for Devise
 //= require jquery_ujs
 //
-//
 //--- Angle
 //= require_tree ./angle/
+//
+//--- Local JS
+//= require lfjrd

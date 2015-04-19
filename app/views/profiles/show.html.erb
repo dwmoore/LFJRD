@@ -82,6 +82,59 @@
 
       <!-- START Right Column -->
       <div class="col-lg-9">
+        <% if @profile.user == current_user %>
+          <div class="row">
+            <div class="col-sm-offset-1 col-sm-10">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <%= form_tag(controller: "updates", action: "create", remote: true, html: {class: "form-horizontal"}) do %>
+                    <div class="form-group">
+                      <%= text_area_tag("body", nil, placeholder: "What did you do today to become a better dev?", class: "form-control") %>
+                      <p>250 Characters Max</p>
+                    </div>
+                    <div class="form-group text-right">
+                      <div class="col-sm-offset-8 col-sm-4">
+                        <%= submit_tag 'Submit', :class => 'btn btn-lg btn-primary btn-block' %>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <!-- START timeline-->
+        <ul class="timeline">
+          <%= @updates.each do |update| %>
+            <li data-datetime="Today" class="timeline-separator"></li>
+            <!-- START timeline item-->
+            <li>
+              <div class="timeline-badge primary">
+                <em class="fa fa-comment"></em>
+              </div>
+              <div class="timeline-panel">
+                <div class="popover left">
+                  <div class="arrow"></div>
+                  <div class="popover-content">
+                    <div class="table-grid table-grid-align-middle mb">
+                      <div class="col">
+                        <p class="m0">
+                        <a href="#" class="text-muted">
+                          <strong>Aiden Curtis</strong>
+                        </a>Posted on <%= profile.created_at.strftime("%m/%d/%Y") %></p>
+                      </div>
+                    </div>
+                    <p>
+                    <em>"<%= update.body %>"</em>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </li>
+          <% end %>
+        </ul>
+
         <!-- START timeline-->
         <ul class="timeline">
           <li data-datetime="Today" class="timeline-separator"></li>
