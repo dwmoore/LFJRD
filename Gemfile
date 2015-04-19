@@ -25,6 +25,7 @@ gem 'aws-sdk', '~> 2.0.31'
 gem 'newrelic_rpm', '~> 3.11.0.283'
 gem 'keen', '~> 0.8.9'
 gem 'ionicons-rails', '~> 2.0.0'
+gem 'kaminari', '~> 0.16.3'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

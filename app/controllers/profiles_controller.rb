@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @profiles = Profile.all
+    @profiles = Profile.all.page params[:page]
   end
 
   def show
