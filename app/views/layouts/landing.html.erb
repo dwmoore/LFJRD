@@ -43,12 +43,14 @@
             <div class="col-xs-12">
               <h1>Want to get tips on building your skills as a junior dev?</h1>
               <div class="col-sm-6 col-sm-offset-3">
-                <div class="input-group">
-                  <input type="text" class="form-control">
-                  <span class="input-group-btn">
-                    <buton type="text" class="btn btn-success">SIGN UP FOR JR DEV NEWS!</button>
-                  </span>
-                </div>
+                <%= form_tag("/thanks") do %>
+                  <div class="input-group">
+                    <%= text_field_tag( "email", nil, placeholder: "Enter your email address", class: "form-control" ) %>
+                    <span class="input-group-btn">
+                      <%= submit_tag "SIGN UP FOR JR DEV NEWS", class: "btn btn-success" %>
+                    </span>
+                  </div>
+                <% end %>
                 <p>We're cool man... You'll get at most one email per week from us and we hope you'll dig it!</p>
               </div>
             </div>
@@ -84,6 +86,7 @@
    <%= javascript_include_tag params[:controller] %>
    <!-- =============== APP SCRIPTS ===============-->
    <%= javascript_include_tag 'application' %>
+   <%= notify_flash %>
 </body>
 
 </html>
