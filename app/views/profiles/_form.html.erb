@@ -13,38 +13,42 @@
     <%= f.label :first_name, class: "col-lg-3 control-label" %>
     <div class="col-sm-9">
       <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+      <p>Required</p>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :last_name, class: "col-lg-3 control-label" %>
     <div class="col-sm-9">
       <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+      <p>Required</p>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :website, class: "col-lg-3 control-label" %>
     <div class="col-sm-9">
       <%= f.text_field :website, placeholder: "http://your_site.com", class: "form-control" %>
+      <p>Required</p>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :twiter, "Twitter Profile", class: "col-lg-3 control-label" %>
     <div class="col-sm-9">
       <%= f.text_field :twitter, placeholder: "https://twitter.com/your_profile", class: "form-control" %>
+      <p>Required</p>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :git_app, "Repo Profile", class: "col-lg-3 control-label" %>
     <div class="col-sm-9">
       <%= f.text_field :git_app, placeholder: "https://github.com/your_profile", class: "form-control" %>
-      <p>Github or Bitbucket</p>
+      <p>Required - Github or Bitbucket</p>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :crud_project, "CRUD Project", class: "col-lg-3 control-label" %>
     <div class="col-sm-9">
       <%= f.text_field :crud_project, placeholder: "https://bitbucket.com/your_profile/your_repo", class: "form-control" %>
-      <p>Repo or commit showing CRUD functionality (Github or Bitbucket)</p>
+      <p>Required - Repo or commit showing CRUD functionality (Github or Bitbucket)</p>
     </div>
   </div>
   <div class="form-group">
@@ -65,14 +69,28 @@
     <%= f.label :why, "Motivation", class: "col-lg-3 control-label" %>
     <div class="col-sm-9">
       <%= f.text_area :why, placeholder: "What interests you about code?", class: "form-control" %>
-      <p>250 characters max</p>
+      <p>Required - 500 characters max</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :gems, "Stack", class: "col-lg-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_area :gems, placeholder: "What gems, front end frameworks, and deployment environments have you used at least once?", class: "form-control" %>
+      <p>Required - 500 characters max</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :recently_leanred, "Recently Learned", class: "col-lg-3 control-label" %>
+    <div class="col-sm-9">
+      <%= f.text_area :recently_learned, placeholder: "Share the last three resources you've used to better your development skills.", class: "form-control" %>
+      <p>Required - 500 characters max</p>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :goals, "Goals", class: "col-lg-3 control-label" %>
     <div class="col-sm-9">
       <%= f.text_area :goals, placeholder: "What are your coding goals for the next three months?", class: "form-control" %>
-      <p>250 characters max</p>
+      <p>Required - 500 characters max</p>
     </div>
   </div>
   <div class="form-group">

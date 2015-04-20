@@ -11,35 +11,35 @@
     <div class="col-md-4">
       <!-- START widget-->
         <div class="panel widget">
-          <%= link_to profile_path(profile) do %>
+          <%= link_to profile_path(profile), class: "profile-widget-link" do %>
             <div class="half-float">
               <img src=<%= image_path("angle/bg3.jpg") %> alt="" class="img-responsive" />
               <div class="half-float-bottom">
                 <%= image_tag gravatar_url(profile.get_email, 128), alt: "Profile Image", class: "img-thumbnail img-circle thumb128" %>
               </div>
             </div>
-          <% end %>
           <div class="panel-body text-center">
             <h3 class="m0"><%= profile.full_name %></h3>
             <p class="text-muted">Code Examples Include:</p>
             <div class="row row-table">
               <div class="col-xs-4 br">
-                <p class="<%= profile.tested_project ? "text-success" : "text-muted" %>">
+                <p class="<%= profile.crud_project.blank? ? "text-danger" : "text-success" %>">
                 CRUD
                 </p>
               </div>
               <div class="col-xs-4 br">
-                <p class="<%= profile.tested_project ? "text-success" : "text-muted" %>">
+                <p class="<%= profile.api_project.blank? ? "text-danger" : "text-success" %>">
                 API
                 </p>
               </div>
               <div class="col-xs-4">
-                <p class="<%= profile.tested_project ? "text-success" : "text-muted" %>">
+                <p class="<%= profile.tested_project.blank? ? "text-danger" : "text-success" %>">
                 TDD
                 </p>
               </div>
             </div>
           </div>
+          <% end %>
           <div class="panel-body text-center bg-gray-dark">
             <div class="row row-table">
               <div class="col-xs-4 br">
