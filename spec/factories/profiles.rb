@@ -10,6 +10,9 @@ FactoryGirl.define do
     tested_project "http://bitbucket.com/profile"
     why "MyText"
     goals "MyText"
+    gems "MyText"
+    recent_learning "MyText"
+    featured false
     user
   end
 
