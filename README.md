@@ -1,13 +1,33 @@
-Lfjrd
-================
+LFJRD - Looking For Junior Rails Dev
+====================================
+
+LFJRD is a personal project I began to help myself and other new Rails
+developers to showcase their work to the tech community and track their efforts
+to improve their development skills.
+
+V1 Features
+-----------
+
+Visitors can view featured profiles, regular profiles, register a user account, sign in, and sign up for a newsletter. Once registered, users can create and update their user profile.
+
+Upcoming V2 Features
+-----------
+
+1. Add Update model to track continued learning.
+2. Add Carrierwave for user uploads for avatar and background images.
+3. Cache Gravitar images locally.
+4. Hook up Notify.js to flash messages.
+5. Add more tracking to Keen.io
 
 This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
 provided by the [RailsApps Project](http://railsapps.github.io/).
 
 Rails Composer is open source and supported by subscribers. Please join RailsApps to support development of Rails Composer.
 
-Problems? Issues?
------------
+Problems?
+----------------
+
+Open an issue on the repo and I'll add it to my backlog.
 
 Need help? Ask on Stack Overflow with the tag 'railsapps.'
 
