@@ -11,7 +11,7 @@ FactoryGirl.define do
     why "MyText"
     goals "MyText"
     gems "MyText"
-    recent_learning "MyText"
+    recently_learned "MyText"
     featured false
     user
   end

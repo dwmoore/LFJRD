@@ -6,8 +6,10 @@ require 'spec_helper'
 
 feature 'Viewing profiles' do
   scenario 'visiting the index' do
+    FactoryGirl.create(:profile)
     visit profiles_path
 
-    expect(page).to have_css 'h1', text: 'Profiles'
+    expect(page).to have_css 'h2', text: "Browsing All Developers"
+    expect(page).to have_content "Mike Mulligan"
   end
 end
