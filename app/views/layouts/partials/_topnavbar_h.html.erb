@@ -29,11 +29,16 @@
     <ul class="nav navbar-nav navbar-right">
       <!-- START Log In -->
       <% if user_signed_in? %>
-        <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-        <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+        <% if current_user.profile.id != nil %>
+          <li><%= link_to 'Edit Profile', edit_profile_path(current_user.profile) %></li>
+        <% else %>
+          <li><%= link_to 'Create Your Profile', new_profile_path(current_user) %></li>
+        <% end %>
+        <li><%= link_to 'Edit Account', edit_user_registration_path %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to 'Sign up to create your profile!', new_user_registration_path %></li>
-        <li><%= link_to 'Sign in', new_user_session_path %></li>
+        <li><%= link_to 'Sign Up To Create Your Profile!', new_user_registration_path %></li>
+        <li><%= link_to 'Sign In', new_user_session_path %></li>
       <% end %>
     </ul>
     <!-- END Right Navbar-->
