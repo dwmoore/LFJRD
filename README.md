@@ -3,7 +3,8 @@ LFJRD - Looking For Junior Rails Dev
 
 LFJRD is a personal project I began to help myself and other new Rails
 developers to showcase their work to the tech community and track their efforts
-to improve their development skills.
+to improve their development skills. It was built mostly over the course of a
+week leading up to RailsConf 2015.
 
 V1 Features
 -----------
@@ -19,22 +20,10 @@ Upcoming V2 Features
 4. Hook up Notify.js to flash messages.
 5. Add more tracking to Keen.io
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
-
-Rails Composer is open source and supported by subscribers. Please join RailsApps to support development of Rails Composer.
-
 Problems?
 ----------------
 
 Open an issue on the repo and I'll add it to my backlog.
-
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
 
 Ruby on Rails
 -------------
@@ -44,25 +33,15 @@ This application requires:
 - Ruby 2.1.5
 - Rails 4.2.1
 
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
 Contributing
 ------------
-
-Credits
--------
+Bug fixes and features are welcomed. Please fork the source code and submit a
+pull request.
 
 License
 -------
+This program is provided under an MIT open source license.
+
+Copyright
+---------
+Copyright (c) 2015 Dave Moore
