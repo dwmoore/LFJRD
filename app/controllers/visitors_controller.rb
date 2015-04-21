@@ -2,6 +2,6 @@ class VisitorsController < ApplicationController
   layout "landing"
 
   def index
-    @profiles = Profile.all
+    @profiles = Profile.first(6)
   end
 end
