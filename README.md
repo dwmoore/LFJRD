@@ -18,7 +18,7 @@ Upcoming V2 Features
 2. Add Carrierwave for user uploads for avatar and background images.
 3. Cache Gravitar images locally.
 4. Hook up Notify.js to flash messages.
-5. Add more tracking to Keen.io
+5. Add tracking for Keen.io
 
 Problems?
 ----------------
